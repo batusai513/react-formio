@@ -23,6 +23,7 @@ module.exports = {
   },
   getElements: function() {
     var Component;
+    var className = ((this.props.component.prefix || this.props.component.suffix) ? 'input-group' : '');
     var classLabel = 'control-label' + ( this.props.component.validate && this.props.component.validate.required ? ' field-required' : '');
     var inputLabel = (this.props.component.label && !this.props.component.hideLabel ? <label htmlFor={this.props.component.key} className={classLabel}>{this.props.component.label}</label> : '');
     var requiredInline = (!this.props.component.label && this.props.component.validate && this.props.component.validate.required ? <span className='glyphicon glyphicon-asterisk form-control-feedback field-required-inline' aria-hidden='true'></span> : '');
@@ -65,7 +66,7 @@ module.exports = {
       Component =
         <div className='formio-component-single'>
           {inputLabel} {requiredInline}
-          <div className='input-group'>
+          <div className={className}>
             {prefix} {Element} {suffix}
           </div>
         </div>;
