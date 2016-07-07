@@ -16,34 +16,25 @@ module.exports = React.createClass({
   onChangeDatetime: function(index, value, str) {
     this.setValue(value, index);
   },
-  getMode: function(showCalendar, showTime){
-    if(showCalendar){
+  getMode: function(showCalendar, showTime) {
+    if (showCalendar) {
       return 'date';
-    }else if(showTime){
+    }
+    else if (showTime) {
       return 'time';
-    }else if(showCalendar, showTime){
+    }
+    else if (showCalendar, showTime) {
       return undefined;
     }
   },
   getSingleElement: function(value, index) {
     return (
-      {/*<DateTimePicker
-              id={this.props.component.key}
-              data-index={index}
-              name={this.props.name}
-              disabled={this.props.readOnly}
-              calendar={this.props.component.enableDate}
-              time={this.props.component.enableTime}
-              placeholder={this.props.component.placeholder}
-              value={value}
-              onChange={this.onChangeDatetime.bind(null, index)}
-              />*/}
         <DateTimeField
-          inputProps={{ id: this.props.component.key, name: this.props.name, disabled: this.props.readOnly }}
+          inputProps={{id: this.props.component.key, name: this.props.name, disabled: this.props.readOnly}}
           dateTime={value}
           defaultText={this.props.component.placeholder}
           mode={this.getMode(this.props.component.enableDate, this.props.component.enableTime)}
-          onChange={() => onChangeDatetime(index)}
+          onChange={() => this.onChangeDatetime(index)}
         />
     );
   }
