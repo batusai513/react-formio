@@ -31,10 +31,10 @@ module.exports = React.createClass({
     return (
         <DateTimeField
           inputProps={{id: this.props.component.key, name: this.props.name, disabled: this.props.readOnly}}
-          dateTime={value}
+          dateTime={value || moment().format('x')}
           defaultText={this.props.component.placeholder}
           mode={this.getMode(this.props.component.enableDate, this.props.component.enableTime)}
-          onChange={() => this.onChangeDatetime(index)}
+          onChange={(value) => this.onChangeDatetime(index, value)}
         />
     );
   }
