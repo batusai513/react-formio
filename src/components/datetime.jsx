@@ -14,14 +14,14 @@ module.exports = React.createClass({
     this.setValue(value, index);
   },
   getMode: function(showCalendar, showTime) {
-    if (showCalendar) {
-      return 'date';
+    if (showCalendar && showTime) {
+      return undefined;
     }
     else if (showTime) {
       return 'time';
     }
-    else if (showCalendar, showTime) {
-      return undefined;
+    else if (showCalendar) {
+      return 'date';
     }
   },
   getSingleElement: function(value, index) {
