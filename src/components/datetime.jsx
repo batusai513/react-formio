@@ -1,11 +1,8 @@
 var React = require('react');
 var valueMixin = require('./mixins/valueMixin');
 var multiMixin = require('./mixins/multiMixin');
-var DateTimePicker = require('react-widgets/lib/DateTimePicker');
-var DateTimeField = require('react-bootstrap-datetimepicker');
-var momentLocalizer = require('react-widgets/lib/localizers/moment');
 var moment = require('moment');
-momentLocalizer(moment);
+import DateTimeField from 'react-bootstrap-datetimepicker';
 
 module.exports = React.createClass({
   displayName: 'Datetime',
