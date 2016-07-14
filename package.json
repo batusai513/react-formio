@@ -33,7 +33,7 @@
     "react": "global:React"
   },
   "dependencies": {
-    "formiojs": "formio/formio.js",
+    "formiojs": "https://github.com/batusai513/formio.js.git",
     "lodash": "^4.13.1",
     "moment": "^2.10.6",
     "react-bootstrap-datetimepicker": "https://github.com/batusai513/react-bootstrap-datetimepicker.git",
